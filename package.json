@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "bin": {
+    "hob": "./src/hobkin/cli.js"
+  },
   "dependencies": {
     "@mdx-js/loader": "^0.8.1",
     "@mdx-js/mdx": "^0.8.1",
@@ -10,6 +13,7 @@
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "handlebars": "^4.0.11",
     "handlebars-loader": "^1.7.0",
     "html-webpack-plugin": "^3.2.0",
     "import-jsx": "^1.3.0",
