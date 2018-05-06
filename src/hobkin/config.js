@@ -6,7 +6,7 @@ module.exports = {
   mode: "development", // TODO: Change to env variable
   output: {
     filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "public"),
+    path: path.resolve(process.cwd(), "public"),
     libraryTarget: "umd",
     globalObject: "this"
   },
