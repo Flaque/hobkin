@@ -37,3 +37,10 @@ seen a potential revival.
 
 <CutenessGraph/>
 ```
+
+## Roadmap
+- [x] Build proof of concept
+- [ ] Add some default CSS so it's not so ugly looking
+- [ ] Allow more than one file to be rendered into an HTML page. 
+- [ ] Add hobkin.config.js that lets you extend the webpack config a la nextjs
+- [ ] Figure out how themes should work
