@@ -1,4 +1,4 @@
-# Hobkin
+# 🧚 Hobkin
 
 Hobkin is an experimental static site generator for interactive articles in [MDX](https://github.com/mdx-js/mdx). It's really just a proof of concept at the moment.
 
@@ -31,7 +31,9 @@ import CutenessGraph from './super-legit-cuteness-graph.js'
 
 # Relative Cuteness of Pomeranians Puppies
 
-By the chart below, we can see that Pomeranian cuteness spiked around 1990 and dropped after the dot com bust in 2000. However, we have recently seen a potential revival.
+By the chart below, we can see that Pomeranian cuteness spiked around 1990
+and dropped after the dot com bust in 2000. However, we have recently 
+seen a potential revival.
 
 <CutenessGraph/>
 ```
