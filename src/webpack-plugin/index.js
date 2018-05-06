@@ -4,33 +4,32 @@ const path = require("path");
 const { renderToString } = require("react-dom/server");
 const React = require("react");
 const fs = require("fs");
-const handlebars = require("handlebars");
+const requireFromString = require("require-from-string");
 
-const flatten = arrs => [].concat.apply([], arrs);
+const PLUGIN = "HobkinPlugin";
+
+const getHtmlFromReactString = str => {
+  const Component = requireFromString(str).default;
+  return renderToString(React.createElement(Component));
+};
 
 class HobkinPlugin {
-  constructor() {
-    // TODO: Switch to async
-    this.tmpl = fs.readFileSync("index.html.hbs");
-  }
-
   apply(compiler) {
-    compiler.hooks.afterEmit.tap("HobkinPlugin", comp => {
-      const files = flatten(comp.chunks.map(c => c.files)).map(f =>
-        path.resolve(comp.compiler.outputPath, f)
-      );
+    compiler.hooks.compilation.tap(PLUGIN, compilation => {
+      compilation.hooks.htmlWebpackPluginAlterAssetTags.tapAsync(
+        PLUGIN,
+        (data, cb) => {
+          const src = compilation.assets["bundle.js"].source(); //TODO Change this
+          const html = getHtmlFromReactString(src);
 
-      // TODO: work with other files
-      const Component = require(files[0]).default;
-      const str = renderToString(React.createElement(Component));
+          // Put the HTML rendered content at the beginning of the array
+          data.body.unshift({
+            tagName: "div",
+            closeTag: true,
+            innerHTML: html
+          });
 
-      fs.writeFile(
-        path.resolve(comp.compiler.outputPath, "index.html"),
-        str,
-        err => {
-          if (err) {
-            console.log(err);
-          }
+          cb(null, data);
         }
       );
     });

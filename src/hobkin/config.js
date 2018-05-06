@@ -1,4 +1,5 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HobkinPlugin = require("../webpack-plugin");
 
 module.exports = {
@@ -23,5 +24,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [new HobkinPlugin()]
+  plugins: [new HtmlWebpackPlugin(), new HobkinPlugin()]
 };
