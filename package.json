@@ -1,6 +1,6 @@
 {
   "name": "hobkin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.js",
   "license": "MIT",
   "description": "A static site generator for MDX",
@@ -39,5 +39,7 @@
     "require-from-string": "^2.0.2",
     "webpack": "4.7.0"
   },
-  "files": ["src"]
+  "files": [
+    "src"
+  ]
 }
