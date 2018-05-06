@@ -1,14 +1,17 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const HobkinPlugin = require("../webpack-plugin");
+const ReactPlugin = require("../plugin-react-ssr");
 
 module.exports = {
   mode: "development", // TODO: Change to env variable
   output: {
-    filename: "bundle.js",
+    filename: "[name].bundle.js",
     path: path.resolve(__dirname, "public"),
     libraryTarget: "umd",
     globalObject: "this"
+  },
+  entry: {
+    client: require.resolve("./client")
   },
   module: {
     rules: [
@@ -24,5 +27,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [new HtmlWebpackPlugin(), new HobkinPlugin()]
+  plugins: [new HtmlWebpackPlugin(), new ReactPlugin()]
 };

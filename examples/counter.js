@@ -14,7 +14,7 @@ export default class extends React.Component {
       setTimeout(() => {
         this.setState(prevState => {
           prevState.count += 1;
-          return prevstate;
+          return prevState;
         });
 
         time();

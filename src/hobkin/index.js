@@ -32,10 +32,10 @@ function exitIfProblems(err, stats) {
 }
 
 module.exports = file => {
-  config.entry = path.resolve(process.cwd(), file);
+  config.entry["app"] = path.resolve(process.cwd(), file);
   webpack(config, (err, stats) => {
     exitIfProblems(err, stats);
 
-    // console.log(stats.toString());
+    console.log(stats.toString());
   });
 };

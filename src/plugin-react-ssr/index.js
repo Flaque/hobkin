@@ -6,25 +6,28 @@ const React = require("react");
 const fs = require("fs");
 const requireFromString = require("require-from-string");
 
-const PLUGIN = "HobkinPlugin";
+const PLUGIN = "ReactPlugin";
 
 const getHtmlFromReactString = str => {
   const Component = requireFromString(str).default;
   return renderToString(React.createElement(Component));
 };
 
-class HobkinPlugin {
+class ReactPlugin {
   apply(compiler) {
     compiler.hooks.compilation.tap(PLUGIN, compilation => {
       compilation.hooks.htmlWebpackPluginAlterAssetTags.tapAsync(
         PLUGIN,
         (data, cb) => {
-          const src = compilation.assets["bundle.js"].source(); //TODO Change this
+          const src = compilation.assets["app.bundle.js"].source(); //TODO Change this
           const html = getHtmlFromReactString(src);
 
           // Put the HTML rendered content at the beginning of the array
           data.body.unshift({
             tagName: "div",
+            attributes: {
+              id: "root"
+            },
             closeTag: true,
             innerHTML: html
           });
@@ -36,4 +39,4 @@ class HobkinPlugin {
   }
 }
 
-module.exports = HobkinPlugin;
+module.exports = ReactPlugin;
