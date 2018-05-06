@@ -1,6 +1,6 @@
 {
   "name": "hobkin",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
   "bin": {
@@ -24,7 +24,5 @@
     "require-from-string": "^2.0.2",
     "webpack": "4.7.0"
   },
-  "files": [
-    "src"
-  ]
+  "files": ["src"]
 }
