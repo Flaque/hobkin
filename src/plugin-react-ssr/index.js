@@ -19,7 +19,7 @@ class ReactPlugin {
       compilation.hooks.htmlWebpackPluginAlterAssetTags.tapAsync(
         PLUGIN,
         (data, cb) => {
-          const src = compilation.assets["app.bundle.js"].source(); //TODO Change this
+          const src = compilation.assets["app.bundle.js"].source();
           const html = getHtmlFromReactString(src);
 
           // Put the HTML rendered content at the beginning of the array

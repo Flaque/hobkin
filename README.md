@@ -1,6 +1,6 @@
 # 🧚 Hobkin
 
-Hobkin is an experimental static site generator for interactive articles in [MDX](https://github.com/mdx-js/mdx). It's really just a proof of concept at the moment.
+Hobkin is an experimental static blog generator for interactive articles in [MDX](https://github.com/mdx-js/mdx). It's really just a proof of concept at the moment.
 
 **Install** with:
 
@@ -32,15 +32,16 @@ import CutenessGraph from './super-legit-cuteness-graph.js'
 # Relative Cuteness of Pomeranians Puppies
 
 By the chart below, we can see that Pomeranian cuteness spiked around 1990
-and dropped after the dot com bust in 2000. However, we have recently 
+and dropped after the dot com bust in 2000. However, we have recently
 seen a potential revival.
 
 <CutenessGraph/>
 ```
 
 ## Roadmap
-- [x] Build proof of concept
-- [ ] Add some default CSS so it's not so ugly looking
-- [ ] Allow more than one file to be rendered into an HTML page
-- [ ] Add hobkin.config.js that lets you extend the webpack config a la nextjs
-- [ ] Figure out how themes should work
+
+* [x] Build proof of concept
+* [ ] Add some default CSS so it's not so ugly looking
+* [ ] Allow more than one file to be rendered into an HTML page
+* [ ] Add hobkin.config.js that lets you extend the webpack config a la nextjs
+* [ ] Figure out how themes should work

@@ -2,8 +2,11 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ReactPlugin = require("../plugin-react-ssr");
 
+const env =
+  process.env.NODE_ENV !== "production" ? "development" : "production";
+
 module.exports = {
-  mode: "development", // TODO: Change to env variable
+  mode: env,
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(process.cwd(), "public"),
