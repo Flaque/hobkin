@@ -1,0 +1,11 @@
+{
+  "name": "hobkin",
+  "version": "0.0.5",
+  "main": "index.js",
+  "repository": "ssh://git@github.com/Flaque/hobkin.git",
+  "author": "Flaque <econrad@zagmail.gonzaga.edu>",
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^4.16.2"
+  }
+}
