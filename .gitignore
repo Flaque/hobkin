@@ -1,6 +1,10 @@
 
 # Created by https://www.gitignore.io/api/node
 
+# Testing stuff from Hobkin
+dist
+foo.mdx
+
 ### Node ###
 # Logs
 logs
